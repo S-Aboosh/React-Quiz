@@ -119,9 +119,7 @@ export default function App() {
   );
 
   useEffect(function () {
-    fetch(
-      "https://github.com/S-Aboosh/React-Quiz/blob/main/data/questions.json"
-    )
+    fetch("https://my-json-server.typicode.com/S-Aboosh/React-Quiz/questions")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch(dispatch({ type: "dataFailed" }));
